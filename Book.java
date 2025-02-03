@@ -65,7 +65,12 @@ class Book
     
     public void setRefNumber(String ref)
     {
-        refNumber = ref;
+        if(ref.length()>=3)
+        {
+            refNumber = ref;
+        } else {
+            System.out.println("Error: Reference Number is not 3 or more characters long.");
+        }
     }
     
     //Reads out all the details of the book in a neat order
