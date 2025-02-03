@@ -14,6 +14,7 @@ class Book
     private int pages;
     private String refNumber;
     private int borrowed;
+    private boolean courseText;
 
     /**
      * Set the author and title fields when this object
@@ -26,6 +27,7 @@ class Book
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
+        courseText = false;
     }
 
     // Add the methods here ...
@@ -84,6 +86,10 @@ class Book
         borrowed += 1;
     }
     
+    public void isCourseText()
+    {
+        courseText = true;
+    }
     
     //Reads out all the details of the book in a neat order
     public void printDetails()
@@ -97,5 +103,11 @@ class Book
             System.out.print(refNumber);
         }
         System.out.println(", Borrowed " + borrowed + " times.");
+        if(courseText==true)
+        {
+            System.out.println("This is a textbook on a course.");
+        } else {
+            System.out.println("This is not a textbook on a course.");
+        }
     }
 }
