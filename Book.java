@@ -21,13 +21,13 @@ class Book
      * is constructed.
      * Set the number of pages as well.
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages)
+    public Book(String bookAuthor, String bookTitle, int bookPages, boolean bookCourse)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
-        courseText = false;
+        courseText = bookCourse;
     }
 
     // Add the methods here ...
@@ -49,6 +49,11 @@ class Book
     public String getRefNumber()
     {
         return refNumber;
+    }
+    
+    public boolean isCourseText()
+    {
+        return courseText;
     }
     
     public int getBorrowed()
@@ -84,11 +89,6 @@ class Book
     public void borrow()
     {
         borrowed += 1;
-    }
-    
-    public void isCourseText()
-    {
-        courseText = true;
     }
     
     //Reads out all the details of the book in a neat order
